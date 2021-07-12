@@ -339,6 +339,7 @@ function openChannel(pubKey, amt, satPerByte) {
   const rpcPayload = {
     node_pubkey_string: pubKey,
     local_funding_amount: amt,
+    spend_unconfirmed: true,
   };
 
   if (satPerByte) {

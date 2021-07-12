@@ -104,6 +104,9 @@ function decodePaymentRequest(paymentRequest) {
 // generate our own unused address and then feed that into the existing call. Then we add an extra 10 sats per
 // feerateSatPerByte. This is because the actual cost is slightly more than the default one output estimate.
 async function estimateChannelOpenFee(amt, confTarget, sweep) {
+
+  // TODO: Make this work with spend_unconfirmed
+
   const address = (await generateAddress()).address;
   const baseFeeEstimate = await estimateFee(address, amt, confTarget, sweep);
 
